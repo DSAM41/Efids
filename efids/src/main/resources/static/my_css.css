@@ -1,0 +1,252 @@
+datalist {
+	position: absolute;
+	background-color: white;
+	border: 1px solid #000;
+	border-radius: 0 0 5px 5px;
+	border-top: none;
+	width: 350px;
+	padding: 5px;
+}
+
+create_arr_from {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+
+#create_arr_from_list > option:hover {
+	background-color: #007bff;
+}
+
+#create_arr_from_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 88%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+
+
+create_arr_flight {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#create_arr_flight_list > option:hover {
+	background-color: #007bff;
+}
+
+#create_arr_flight_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 88%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+
+create_arr_remark {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#create_arr_remark_list > option:hover {
+	background-color: #007bff;
+}
+
+#create_arr_remark_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 93.5%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+
+create_dep_via {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#create_dep_via_list > option:hover {
+	background-color: #007bff;
+}
+
+#create_dep_via_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 88%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+
+create_dep_to {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#create_dep_to_list > option:hover {
+	background-color: #007bff;
+}
+
+#create_dep_to_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 88%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+
+create_dep_flight {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#create_dep_flight_list > option:hover {
+	background-color: #007bff;
+}
+
+#create_dep_flight_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 88%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+
+create_dep_remark {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#create_dep_remark_list > option:hover {
+	background-color: #007bff;
+}
+
+#create_dep_remark_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 93.5%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+edit_arr_remark {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#edit_arr_remark_list > option:hover {
+	background-color: #007bff;
+}
+
+#edit_arr_remark_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 88%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+
+edit_dep_remark {
+	font-size: 18px;
+	padding: 5px;
+	height: 35px;
+	width: 350px;
+	border: 1px solid #000;
+	outline: none;
+	border-radius: 5px;
+	color: #000;
+	/*   border-bottom: none; */
+}
+
+#edit_dep_remark_list > option:hover {
+	background-color: #007bff;
+}
+
+#edit_dep_remark_list {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 93.5%;
+	height: auto;
+	max-height: 200px;
+	overflow-y: scroll;
+}
