@@ -16,11 +16,12 @@
 <title>Efids Page</title>
 
 <!-- CSS -->
-<link rel="stylesheet" href="/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+
 <!-- AJAX -->
 <script src="/jquery3.6.0/jquery.min.js"></script>
 <!-- MODAL -->
-<script src="/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+<script src="/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
 <!-- VALIDATE -->
 <script src="/jquery-validation-1.19.5/dist/jquery.validate.js"></script>
 <!-- DATABLE -->
@@ -28,8 +29,8 @@
 <script src="/DataTables/DataTables-1.13.4/js/jquery.dataTables.min.js"></script>
 <!-- FILE -->
 <script src="/sheetjs-0.17.5/dist/xlsx.full.min.js"></script>
-<script src="/my_jss.js"></script>
-<link rel="stylesheet" href="/my_css.css">
+<script src="/my_js.js"></script>
+<link rel="stylesheet" href="/my_cs.css">
 <!-- ICON -->
 <link rel="stylesheet" href="/fontawesome-free-6.3.0-web/css/all.css" >
 <!-- DATETIME -->
@@ -71,9 +72,12 @@
 		  <li class="nav-item">
 		    <a class="nav-link" id="Dep-tab" data-toggle="tab" href="#Dep" role="tab" aria-controls="Dep" aria-selected="false"><i class="fas fa-plane-departure"></i> Departure</a>
 		  </li>
-<!-- 		  <li class="nav-item ml-auto"> -->
-<!-- 		    <button type="button" id="refreshbtn" class="btn btn-success mr-auto">Refesh</button> -->
-<!-- 		  </li> -->
+		  <li class="nav-item ml-auto">
+			<div class="custom-control custom-switch custom-switch-md">
+			  <input type="checkbox" class="custom-control-input" id="statusEfids" disabled="disabled">
+			  <label class="custom-control-label" for="statusEfids">Emergency status</label>
+			</div>
+		  </li>
 		</ul>
 		
 		<div class="tab-content" id="myTabContent">

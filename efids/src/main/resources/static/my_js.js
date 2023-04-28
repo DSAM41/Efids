@@ -602,31 +602,38 @@ function displayJsonToHtmlTable(jsonData){
 
 $(document).ready(function downloadFileAreDep() {
     $('.sync').on('click', function () {
-    	if(isPage == "dep"){
-    		$.ajax({
-			    url: "/aftab/departure/excel",
-			    type: "GET",
-			    success: function(response) {
-			        alert(response);
-			    },
-			    error: function(xhr) {
-			        console.log(xhr.responseText);
-			        alert("Failed to save Excel file");
-			    }
-			});
-    	} else {
-    		$.ajax({
-			    url: "/aftab/arrival/excel",
-			    type: "GET",
-			    success: function(response) {
-			        alert(response);
-			    },
-			    error: function(xhr) {
-			        console.log(xhr.responseText);
-			        alert("Failed to save Excel file");
-			    }
-			});
-        }
+    	$.ajax({
+    	    url: "http://efid.airportthai.co.th/APIResponse/generate_contingency_images",
+    	    method: "POST",
+    	    headers: {
+    	        "x-api-key": "a5563a1d21f57f0a35dcc157de6385b8711d29521bd06acd43d1d97dc5ea85e0"
+    	    }
+    	});
+//    	if(isPage == "dep"){
+//    		$.ajax({
+//			    url: "/aftab/departure/excel",
+//			    type: "GET",
+//			    success: function(response) {
+//			        alert(response);
+//			    },
+//			    error: function(xhr) {
+//			        console.log(xhr.responseText);
+//			        alert("Failed to save Excel file");
+//			    }
+//			});
+//    	} else {
+//    		$.ajax({
+//			    url: "/aftab/arrival/excel",
+//			    type: "GET",
+//			    success: function(response) {
+//			        alert(response);
+//			    },
+//			    error: function(xhr) {
+//			        console.log(xhr.responseText);
+//			        alert("Failed to save Excel file");
+//			    }
+//			});
+//        }
     });
     
 });
@@ -1384,6 +1391,20 @@ $(document).ready(function prepareFromFile() {
 });
 
 $(document).ready(function selectPage() {
+	
+	$.ajax({
+	    url: "http://efid.airportthai.co.th/APIResponse/get_emergency_status",
+	    method: "POST",
+	    headers: {
+	        "x-api-key": "a5563a1d21f57f0a35dcc157de6385b8711d29521bd06acd43d1d97dc5ea85e0"
+	    },
+	    success: function(data) {
+	    	$("#statusEfids").prop("checked", data);
+	    	//$("#statusHtml").html("Emergency status on");
+	    }
+	});
+	
+	
 	$('#Arr-tab').on('click', function () {  
 		isPage = "arr";
 		console.log(isPage);
