@@ -253,7 +253,7 @@ edit_dep_remark {
 
 /* for md */
 
-.custom-switch.custom-switch-md .custom-control-label {
+/* .custom-switch.custom-switch-md .custom-control-label {
     padding-left: 1rem;
     padding-top: 0.25rem;
 }
@@ -272,4 +272,4 @@ edit_dep_remark {
 
 .custom-switch.custom-switch-md .custom-control-input:checked ~ .custom-control-label::after {
     transform: translateX(calc(1.5rem - 0.25rem));
-}
+} */

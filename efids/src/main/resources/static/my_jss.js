@@ -1399,8 +1399,11 @@ $(document).ready(function selectPage() {
 	        "x-api-key": "a5563a1d21f57f0a35dcc157de6385b8711d29521bd06acd43d1d97dc5ea85e0"
 	    },
 	    success: function(data) {
-	    	$("#statusEfids").prop("checked", data);
+	    	//$("#statusEfids").prop("checked", data);
 	    	//$("#statusHtml").html("Emergency status on");
+	    	if (data){
+	    		$("#statusEfids").removeClass("bg-danger").addClass("bg-success");
+	    	}
 	    }
 	});
 	

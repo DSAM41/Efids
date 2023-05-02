@@ -29,8 +29,8 @@
 <script src="/DataTables/DataTables-1.13.4/js/jquery.dataTables.min.js"></script>
 <!-- FILE -->
 <script src="/sheetjs-0.17.5/dist/xlsx.full.min.js"></script>
-<script src="/my_js.js"></script>
-<link rel="stylesheet" href="/my_cs.css">
+<script src="/my_jss.js"></script>
+<link rel="stylesheet" href="/my_css.css">
 <!-- ICON -->
 <link rel="stylesheet" href="/fontawesome-free-6.3.0-web/css/all.css" >
 <!-- DATETIME -->
@@ -73,10 +73,14 @@
 		    <a class="nav-link" id="Dep-tab" data-toggle="tab" href="#Dep" role="tab" aria-controls="Dep" aria-selected="false"><i class="fas fa-plane-departure"></i> Departure</a>
 		  </li>
 		  <li class="nav-item ml-auto">
-			<div class="custom-control custom-switch custom-switch-md">
-			  <input type="checkbox" class="custom-control-input" id="statusEfids" disabled="disabled">
-			  <label class="custom-control-label" for="statusEfids">Emergency status</label>
-			</div>
+<!-- 			<div class="custom-control custom-switch custom-switch-md"> -->
+<!-- 			  <input type="checkbox" class="custom-control-input" id="statusEfids" disabled="disabled"> -->
+<!-- 			  <label class="custom-control-label" for="statusEfids">Emergency status : OFF</label> -->
+<!-- 			</div> -->
+			<div class="d-flex align-items-center">
+			    <div id="statusEfids" class="bg-danger rounded-circle" style="width: 30px; height: 30px;"></div>
+			     &nbsp;Emergency status
+			</div>	
 		  </li>
 		</ul>
 		
