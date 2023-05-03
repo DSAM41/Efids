@@ -1,4 +1,4 @@
-package efids.aftab.model;
+package efids.efids.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package efids.aftab.controllers;
+package efids.efids.controllers;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import efids.aftab.model.Airline;
-import efids.aftab.service.AirlineService;
+import efids.efids.model.Airline;
+import efids.efids.service.AirlineService;
 
 @RestController
 public class AirlineController {

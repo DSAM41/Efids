@@ -1,12 +1,12 @@
-package efids.aftab.service;
+package efids.efids.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import efids.aftab.model.Fidtab;
-import efids.aftab.repository.FidtabRepository;
+import efids.efids.model.Fidtab;
+import efids.efids.repository.FidtabRepository;
 
 @Service
 public class FidtabService {

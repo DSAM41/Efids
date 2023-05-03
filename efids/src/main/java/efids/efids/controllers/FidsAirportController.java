@@ -1,4 +1,4 @@
-package efids.aftab.controllers;
+package efids.efids.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import efids.aftab.model.FidsAirport;
-import efids.aftab.service.FidsAirportService;
+import efids.efids.model.Airport;
+import efids.efids.service.FidsAirportService;
 
 @RestController
 public class FidsAirportController {
@@ -37,9 +37,9 @@ public class FidsAirportController {
 	FidsAirportService fidsAirportService;
 	
 	@GetMapping("fidsairport/{apcthree}")
-	public ResponseEntity<FidsAirport> getFidsAirport(@PathVariable String apcthree) {
+	public ResponseEntity<Airport> getFidsAirport(@PathVariable String apcthree) {
 		String id = new String(apcthree);
-		Optional<FidsAirport> fidsAirport = fidsAirportService.selectFidsAirport(id);
+		Optional<Airport> fidsAirport = fidsAirportService.selectFidsAirport(id);
 		if (fidsAirport.isPresent()) {
 			return ResponseEntity.ok(fidsAirport.get());
 		} else {
@@ -48,7 +48,7 @@ public class FidsAirportController {
 	}
   
     @GetMapping("fidsairport/all")
-	public List<FidsAirport> showFidsAirport() {
+	public List<Airport> showFidsAirport() {
 		return fidsAirportService.showFidsAirport();
 	}    
 }

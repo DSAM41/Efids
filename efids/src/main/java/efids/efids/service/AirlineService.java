@@ -1,12 +1,12 @@
-package efids.aftab.service;
+package efids.efids.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import efids.aftab.model.Airline;
-import efids.aftab.repository.AirlineRepository;
+import efids.efids.model.Airline;
+import efids.efids.repository.AirlineRepository;
 
 @Service
 public class AirlineService {

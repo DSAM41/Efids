@@ -29,6 +29,12 @@ function getArr(){
 						var date = time.getDate();
 						var timeDate = timeFormatted + "/" + date
 						
+						if(val.type.trim() === "D"){
+							type = "DOM"
+						} else {
+							type = "INT"
+						}
+						
 						var tr = "<tr>";
 						tr = tr + "<td class='d-none'>" + val.time.trim() + "</td>";
 						tr = tr + "<td class='d-none'>" + val.id.trim() + "</td>";
@@ -36,7 +42,7 @@ function getArr(){
 						tr = tr + "<td>" + val.from.trim() + "</td>";
 						tr = tr + "<td>" + val.flight.trim() + "</td>";
 						tr = tr + "<td>" + val.belt.trim() + "</td>";
-						tr = tr + "<td>" + val.type.trim() + "</td>";
+						tr = tr + "<td>" + type.trim() + "</td>";
 						tr = tr + "<td>" + val.nature.trim() + "</td>";
 						tr = tr + "<td>" + val.remark.trim() + "</td>";
 						tr = tr + '<td><button type="button" class="btn btn-outline-primary editbtn_arr"><i class="fas fa-edit"></i> Edit</button></td>';
@@ -94,6 +100,12 @@ function getDep(){
 						var date = time.getDate();
 						var timeDate = timeFormatted + "/" + date
 						
+						if(val.type.trim() === "D"){
+							type = "DOM"
+						} else {
+							type = "INT"
+						}
+						
 						var tr = "<tr>";
 						tr = tr + "<td class='d-none'>" + val.time.trim() + "</td>";
 						tr = tr + "<td class='d-none'>" + val.id.trim() + "</td>";
@@ -103,7 +115,7 @@ function getDep(){
 						tr = tr + "<td>" + val.flight.trim() + "</td>";
 						tr = tr + "<td>" + val.counter.trim() + "</td>";
 						tr = tr + "<td>" + val.gate.trim() + "</td>";
-						tr = tr + "<td>" + val.type.trim() + "</td>";
+						tr = tr + "<td>" + type.trim() + "</td>";
 						tr = tr + "<td>" + val.nature.trim() + "</td>";
 						tr = tr + "<td>" + val.remark.trim() + "</td>";
 						tr = tr + '<td><button type="button" class="btn btn-outline-primary editbtn_dep"><i class="fas fa-edit"></i> Edit</button></td>';
@@ -486,11 +498,7 @@ function displayJsonToHtmlTable(jsonData){
 					to_create = to_create;
 				}
 
-				if(type_create === "D"){
-					type_create = "DOM"
-				} else {
-					type_create = "INT"
-				}
+				
 
 				if (gate2_create.trim() !== "") {
 					gate_create = gate_create.trim() + "," + gate2_create;
@@ -551,11 +559,7 @@ function displayJsonToHtmlTable(jsonData){
 					from_create = from_create;
 				}
 
-				if(type_create === "D"){
-					type_create = "DOM"
-				} else {
-					type_create = "INT"
-				}
+				
 	
 				if (belt2_create.trim() !== "") {
 					belt_create = belt_create.trim() + "," + belt2_create;

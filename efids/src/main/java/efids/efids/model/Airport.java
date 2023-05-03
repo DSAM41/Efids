@@ -1,4 +1,4 @@
-package efids.aftab.model;
+package efids.efids.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,8 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "FIDS_AIRPORT")
-public class FidsAirport {
+public class Airport {
 	
 	//Arrivals
 	@Id
@@ -25,11 +24,11 @@ public class FidsAirport {
 	private String apc4;
 
 
-	public FidsAirport() {
+	public Airport() {
 	}
 
 
-	public FidsAirport(String apcthree, String apsn, String apsn2, String weather, String apsn3, String apc4) {
+	public Airport(String apcthree, String apsn, String apsn2, String weather, String apsn3, String apc4) {
 		super();
 		this.apcthree = apcthree;
 		this.apsn = apsn;

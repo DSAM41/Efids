@@ -29,7 +29,7 @@
 <script src="/DataTables/DataTables-1.13.4/js/jquery.dataTables.min.js"></script>
 <!-- FILE -->
 <script src="/sheetjs-0.17.5/dist/xlsx.full.min.js"></script>
-<script src="/my_jss.js"></script>
+<script src="/my_js.js"></script>
 <link rel="stylesheet" href="/my_css.css">
 <!-- ICON -->
 <link rel="stylesheet" href="/fontawesome-free-6.3.0-web/css/all.css" >
@@ -214,9 +214,9 @@
 <!--                             <input type="text" name="create_arr_type" id="create_arr_type" class="form-control" placeholder="Enter Type"> -->
                             <select class="form-control" id="create_arr_type" name="create_arr_type" >
 						      <option value=""></option>
-						      <option value="INT">INT</option>
-						      <option value="DOM">DOM</option>
-						      <option value="INT">MIX</option>
+						      <option value="I">INT</option>
+						      <option value="D">DOM</option>
+						      <option value="I">MIX</option>
 						    </select>
                         </div>
                         
@@ -322,9 +322,9 @@
                             <label> DOM/INT </label>
                             <select class="form-control" id="create_dep_type" name="create_dep_type">
 						      <option value=""></option>
-						      <option value="INT">INT</option>
-						      <option value="DOM">DOM</option>
-						      <option value="INT">MIX</option>
+						      <option value="I">INT</option>
+						      <option value="D">DOM</option>
+						      <option value="I">MIX</option>
 						    </select>
                         </div>
                         
@@ -393,9 +393,9 @@
                         <div class="form-group">
                             <label> Flight Type </label>
                             <select class="form-control" id="edit_arr_type" name="edit_arr_type" disabled="disabled">
-						      <option value="INT">INT</option>
-						      <option value="DOM">DOM</option>
-						      <option value="INT">MIX</option>
+						      <option value="I">INT</option>
+						      <option value="D">DOM</option>
+						      <option value="I">MIX</option>
 						    </select>
                         </div>
                         

@@ -1,4 +1,4 @@
-package efids.aftab.model;
+package efids.efids.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +6,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CEDAAODB.FIDTAB")
 public class Fidtab {
 	
 		@Id
