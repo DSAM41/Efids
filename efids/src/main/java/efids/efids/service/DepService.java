@@ -16,7 +16,7 @@ public class DepService {
 
 	// READ
 	public List<Contingency_dep> getDep() {
-		return depRepo.findAll();
+		return depRepo.findAllByOrderByTimeAsc();
 	}
 
 	// CREATE

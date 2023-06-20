@@ -19,6 +19,9 @@ public class User_login {
 		
 		@Column(name = "user_password")
 		private String password;
+		
+		@Column(name = "user_rule")
+		private String rule;
 
 		public String getId() {
 			return id;
@@ -42,6 +45,14 @@ public class User_login {
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		public String getRule() {
+			return rule;
+		}
+
+		public void setRule(String rule) {
+			this.rule = rule;
 		}
 
 		

@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = " efids.efids.model.User_login " %>
+<%
+    if (session != null && session.getAttribute("user") != null) {
+    	User_login user = (User_login)session.getAttribute("user");  
+    	if (user.getRule().equals("user")) {
+    		// Redirect to login page or show error message
+            response.sendRedirect("/efids/user");
+    	}
+    	if (user.getRule().equals("admin")) {
+    		// Redirect to login page or show error message
+            response.sendRedirect("/efids/admin");
+    	}
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>

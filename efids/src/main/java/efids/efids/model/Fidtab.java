@@ -13,15 +13,18 @@ public class Fidtab {
 		private String urno;
 		@Column(name = "BEME")
 		private String beme;
+		@Column(name = "CODE")
+		private String code;
 		
 		public Fidtab() {
 			super();
 		}
 
-		public Fidtab(String urno, String beme) {
+		public Fidtab(String urno, String beme, String code) {
 			super();
 			this.urno = urno;
 			this.beme = beme;
+			this.code = code;
 		}
 
 		public String getUrno() {
@@ -40,8 +43,12 @@ public class Fidtab {
 			this.beme = beme;
 		}
 
-	
-	
-			
+		public String getCode() {
+			return code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
 		
 }
