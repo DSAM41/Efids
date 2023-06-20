@@ -22,7 +22,9 @@ public class UpdateArr {
 		String filePath = null;
 		String urlFidsairport = null;
 		String urlCreateall = null;
+		String urlFidtab  = null;
 		JSONArray fidsairport = null;
+		JSONArray fidtab = null;
 		
 		String configFilePath = "configArr.ini";
 		
@@ -32,6 +34,7 @@ public class UpdateArr {
 			prop.load(propsInput);
 			filePath = prop.getProperty("filePath");
 			urlFidsairport = prop.getProperty("urlFidsairport");
+			urlFidtab = prop.getProperty("urlFidtab");
 			urlCreateall = prop.getProperty("urlCreateall");
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -56,6 +59,29 @@ public class UpdateArr {
 
 			// แปลง response เป็น JSONArray
 			fidsairport = new JSONArray(response.toString());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			// เรียกใช้ API ด้วย HttpURLConnection
+			// URL url = new URL("http://localhost:8080/fidsairport/all");
+			URL url = new URL(urlFidtab);
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("GET");
+
+			// อ่าน response จาก API และเก็บไว้ใน StringBuilder
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuilder response = new StringBuilder();
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+
+			// แปลง response เป็น JSONArray
+			fidtab = new JSONArray(response.toString());
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,20 +112,27 @@ public class UpdateArr {
 				String type = row.getCell(3).getStringCellValue();
 				String remark = row.getCell(10).getStringCellValue();
 
-				String target = from;
 				for (int i = 0; i < fidsairport.length(); i++) {
 					JSONObject obj = fidsairport.getJSONObject(i);
 					String apcthree = obj.getString("apcthree");
-					if (apcthree.equals(target)) {
+					if (apcthree.equals(from)) {
 						from = obj.getString("apsn");
 					}
 				}
-
-				if (type == "D") {
-					type = "DOM";
-				} else {
-					type = "INT";
+				
+				for (int i = 0; i < fidtab.length(); i++) {
+					JSONObject obj = fidtab.getJSONObject(i);
+					String code = obj.getString("code");
+					if (code.equals(remark)) {
+						remark = obj.getString("beme");
+					}
 				}
+
+//				if (type == "D") {
+//					type = "DOM";
+//				} else {
+//					type = "INT";
+//				}
 
 				if (!belt2.trim().isEmpty()) {
 					belt1 = belt1.trim() + "," + belt2;

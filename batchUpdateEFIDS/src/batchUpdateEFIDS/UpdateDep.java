@@ -22,7 +22,9 @@ public class UpdateDep {
 		String filePath = null;
 		String urlFidsairport = null;
 		String urlCreateall = null;
+		String urlFidtab  = null;
 		JSONArray fidsairport = null;
+		JSONArray fidtab = null;
 		
 		String configFilePath = "configDep.ini";
 		
@@ -32,6 +34,7 @@ public class UpdateDep {
 			prop.load(propsInput);
 			filePath = prop.getProperty("filePath");
 			urlFidsairport = prop.getProperty("urlFidsairport");
+			urlFidtab = prop.getProperty("urlFidtab");
 			urlCreateall = prop.getProperty("urlCreateall");
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -60,7 +63,29 @@ public class UpdateDep {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
+		
+		try {
+			// เรียกใช้ API ด้วย HttpURLConnection
+			// URL url = new URL("http://localhost:8080/fidsairport/all");
+			URL url = new URL(urlFidtab);
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("GET");
+
+			// อ่าน response จาก API และเก็บไว้ใน StringBuilder
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuilder response = new StringBuilder();
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+
+			// แปลง response เป็น JSONArray
+			fidtab = new JSONArray(response.toString());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		// สร้าง JSONArray สำหรับเก็บ JSONObject ของแต่ละแถว
 		JSONArray jsonArray = new JSONArray();
@@ -106,11 +131,20 @@ public class UpdateDep {
 					}
 				}
 
-				if (type == "D") {
-					type = "DOM";
-				} else {
-					type = "INT";
+				for (int i = 0; i < fidtab.length(); i++) {
+					JSONObject obj = fidtab.getJSONObject(i);
+					System.out.println(remark);
+					String code = obj.getString("code");
+					if (code.equals(remark)) {
+						remark = obj.getString("beme");
+					}
 				}
+				
+//				if (type == "D") {
+//					type = "DOM";
+//				} else {
+//					type = "INT";
+//				}
 
 				if (!gate2.trim().isEmpty()) {
 					gate1 = gate1.trim() + "," + gate2;
@@ -164,7 +198,7 @@ public class UpdateDep {
 		}
 		in.close();
 
-        System.out.println(response.toString());
+//        System.out.println(response.toString());
 
 	}
 }
